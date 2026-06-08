@@ -47,6 +47,7 @@ for df in [train, test]:
     df["hour"] = df["timestamp"].dt.hour
     df["minute"] = df["timestamp"].dt.minute
 
+# Convert timestamp into cyclic features
     df["hour_sin"] = np.sin(
         2 * np.pi * df["hour"] / 24
     )
@@ -65,6 +66,11 @@ for df in [train, test]:
         df["Temperature"]
         * df["NumberofLanes"]
     )
+
+    df["traffic_density"] = (
+    df["VehicleCount"]
+    / df["NumberofLanes"]
+    ) 
 
 # ==========================
 # FEATURES
