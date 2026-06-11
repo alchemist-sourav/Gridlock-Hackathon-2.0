@@ -104,6 +104,4 @@ Gridlock-Hackathon-2.0/
 └── README.md
 ```
 
-## Author
 
-Sourav S.
